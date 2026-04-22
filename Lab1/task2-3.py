@@ -19,6 +19,30 @@ def find_dates(text: str) -> list:
     pattern = r'\d{2}\.\d{2}\.\d{4}'
     return re.findall(pattern, text)
 
+def main():
+    print("Выбери задачу:")
+    print("1 — Посчитать русские символы")
+    print("2 — Проверить палиндром (латиница)")
+    print("3 — Найти даты")
+
+    choice = input("Твой выбор: ")
+
+    text = input("Введи строку: ")
+
+    if choice == "1":
+        result = count_russian_letters(text)
+        print("Количество русских символов:", result)
+
+    elif choice == "2":
+        result = is_latin_palindrome(text)
+        print("Палиндром:", result)
+
+    elif choice == "3":
+        result = find_dates(text)
+        print("Найденные даты:", result)
+
+    else:
+        print("Ты что-то не то ввёл")
+
 if __name__ == "__main__":
-    text = str(input("Введите текст: "))
-    print(find_dates(text))
+    main()
