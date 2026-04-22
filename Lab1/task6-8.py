@@ -41,5 +41,23 @@ def max_consecutive_digits(text: str) -> int:
 
     return max_count
 
-text = str(input("Введите числа: "))
-print(max_consecutive_digits(text))
+def main():
+    print("Выбери задачу:")
+    print("1 — Максимальное вещественное число")
+    print("2 — Минимальное рациональное число")
+    print("3 — Максимум подряд идущих цифр")
+
+    choice = input("Твой выбор: ")
+    text = input("Введи строку: ")
+
+    if choice == "1":
+        print(find_max_float(text))
+    elif choice == "2":
+        print(find_min_rational(text))
+    elif choice == "3":
+        print(max_consecutive_digits(text))
+    else:
+        print("Ошибка ввода")
+
+if __name__ == "__main__":
+    main()
