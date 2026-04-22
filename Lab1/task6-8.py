@@ -27,5 +27,19 @@ def find_min_rational(text: str) -> float:
 
     return min_num
 
-text = str(input("Введите дробные числа: "))
-print(find_min_rational(text))
+def max_consecutive_digits(text: str) -> int:
+    max_count = 0
+    current = 0
+
+    for char in text:
+        if char.isdigit():
+            current += 1
+            if current > max_count:
+                max_count = current
+        else:
+            current = 0
+
+    return max_count
+
+text = str(input("Введите числа: "))
+print(max_consecutive_digits(text))
