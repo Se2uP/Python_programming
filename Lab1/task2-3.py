@@ -14,6 +14,11 @@ def is_latin_palindrome(text: str) -> bool:
 
     return filtered == filtered[::-1]
 
+def find_dates(text: str) -> list:
+    import re
+    pattern = r'\d{2}\.\d{2}\.\d{4}'
+    return re.findall(pattern, text)
+
 if __name__ == "__main__":
     text = str(input("Введите текст: "))
-    print(is_latin_palindrome(text))
+    print(find_dates(text))
