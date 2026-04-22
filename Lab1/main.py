@@ -8,9 +8,10 @@ def is_prime(number: int) -> bool:
 
     return True
 
+
 def sum_of_prime_divisors(number: int) -> int:
     if number == 0:
-        raise ValueError("Для числа 0 простые делители не определены.")
+        raise ValueError("For zero, prime divisors are undefined.")
 
     total = 0
 
@@ -20,5 +21,18 @@ def sum_of_prime_divisors(number: int) -> int:
 
     return total
 
-number = int(input("Введите число: "))
-print(sum_of_prime_divisors(number))
+
+def count_odd_digits_greater_than_three(number: int) -> int:
+    count = 0
+
+    for digit in str(abs(number)):
+        digit_value = int(digit)
+        if digit_value % 2 == 1 and digit_value > 3:
+            count += 1
+
+    return count
+
+
+if __name__ == "__main__":
+    number = int(input("Enter number: "))
+    print(sum_of_prime_divisors(number))
